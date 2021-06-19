@@ -218,27 +218,43 @@ export default function MainPage({ navigation, route }) {
           <Text style={styles.middleButtonText}>Favorite</Text>
         </TouchableOpacity>
       </ScrollView>
+
+      {Platform.OS === "ios" ? (
+        <AdMobBanner
+          bannerSize="fullBanner"
+          servePersonalizedAds={true}
+          adUnitID="ca-app-pub-1523024783956163/3658729477"
+          style={styles.banner}
+        />
+      ) : (
+        <AdMobBanner
+          bannerSize="fullBanner"
+          servePersonalizedAds={true}
+          adUnitID="ca-app-pub-1523024783956163/6814487803"
+          style={styles.banner}
+        />
+      )}
       <View style={styles.cardContainer}>
         {/* 하나의 카드 영역을 나타내는 View */}
         {cateState.map((content, i) => {
           return <Card content={content} key={i} navigation={navigation} />;
         })}
-        {Platform.OS === "ios" ? (
-          <AdMobBanner
-            bannerSize="fullBanner"
-            servePersonalizedAds={true}
-            adUnitID="ca-app-pub-1523024783956163/3658729477"
-            style={styles.banner}
-          />
-        ) : (
-          <AdMobBanner
-            bannerSize="fullBanner"
-            servePersonalizedAds={true}
-            adUnitID="ca-app-pub-1523024783956163/6814487803"
-            style={styles.banner}
-          />
-        )}
       </View>
+      {Platform.OS === "ios" ? (
+        <AdMobBanner
+          bannerSize="fullBanner"
+          servePersonalizedAds={true}
+          adUnitID="ca-app-pub-1523024783956163/3658729477"
+          style={styles.banner}
+        />
+      ) : (
+        <AdMobBanner
+          bannerSize="fullBanner"
+          servePersonalizedAds={true}
+          adUnitID="ca-app-pub-1523024783956163/6814487803"
+          style={styles.banner}
+        />
+      )}
     </ScrollView>
   );
 }

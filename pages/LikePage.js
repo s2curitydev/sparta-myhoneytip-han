@@ -11,6 +11,14 @@ import Loading from "../components/Loading";
 import Constants from "expo-constants";
 import { firebase_db } from "../firebaseConfig";
 
+import {
+  setTestDeviceIDAsync,
+  AdMobBanner,
+  AdMobInterstitial,
+  PublisherBanner,
+  AdMobRewarded,
+} from "expo-ads-admob";
+
 export default function LikePage({ navigation, route }) {
   const [tip, setTip] = useState([]);
   const [ready, setReady] = useState(true);
@@ -39,6 +47,21 @@ export default function LikePage({ navigation, route }) {
     <Loading />
   ) : (
     <ScrollView style={styles.container}>
+      {Platform.OS === "ios" ? (
+        <AdMobBanner
+          bannerSize="fullBanner"
+          servePersonalizedAds={true}
+          adUnitID="ca-app-pub-1523024783956163/3658729477"
+          style={styles.banner}
+        />
+      ) : (
+        <AdMobBanner
+          bannerSize="fullBanner"
+          servePersonalizedAds={true}
+          adUnitID="ca-app-pub-1523024783956163/6814487803"
+          style={styles.banner}
+        />
+      )}
       {tip.map((content, i) => {
         return (
           <View>
@@ -46,6 +69,21 @@ export default function LikePage({ navigation, route }) {
           </View>
         );
       })}
+      {Platform.OS === "ios" ? (
+        <AdMobBanner
+          bannerSize="fullBanner"
+          servePersonalizedAds={true}
+          adUnitID="ca-app-pub-1523024783956163/3658729477"
+          style={styles.banner}
+        />
+      ) : (
+        <AdMobBanner
+          bannerSize="fullBanner"
+          servePersonalizedAds={true}
+          adUnitID="ca-app-pub-1523024783956163/6814487803"
+          style={styles.banner}
+        />
+      )}
     </ScrollView>
   );
 }

@@ -11,6 +11,14 @@ import main from "../assets/main.png";
 import * as Linking from "expo-linking";
 import aboutImage from "../assets/aboutImage.png";
 
+import {
+  setTestDeviceIDAsync,
+  AdMobBanner,
+  AdMobInterstitial,
+  PublisherBanner,
+  AdMobRewarded,
+} from "expo-ads-admob";
+
 export default function AboutPage() {
   const link = () => {
     Linking.openURL("https://www.linkedin.com/in/hoseokhan/");
@@ -20,6 +28,21 @@ export default function AboutPage() {
       <Text style={styles.introText}>Welcome to my Portfolio!!</Text>
       <View style={styles.introView}></View>
       <View style={styles.introContainer}>
+        {Platform.OS === "ios" ? (
+          <AdMobBanner
+            bannerSize="fullBanner"
+            servePersonalizedAds={true}
+            adUnitID="ca-app-pub-1523024783956163/3658729477"
+            style={styles.banner}
+          />
+        ) : (
+          <AdMobBanner
+            bannerSize="fullBanner"
+            servePersonalizedAds={true}
+            adUnitID="ca-app-pub-1523024783956163/6814487803"
+            style={styles.banner}
+          />
+        )}
         <Image style={styles.aboutImage} source={aboutImage} />
         <Text style={styles.bodyText}>
           This page will be updated soon. Thanks for your understanding.
