@@ -15,12 +15,12 @@ export default function Card({ content, navigation }) {
     //애드몹도 외부 API 이므로 실행 순서를 지키기위해 async/await 사용!
     //안드로이드와 IOS 각각 광고 준비 키가 다르기 때문에 디바이스 성격에 따라 다르게 초기화 시켜줘야 합니다.
 
-    // Platform.OS === "ios"
-    //   ? AdMobInterstitial.setAdUnitID("ca-app-pub-3271224099084995/3801252904")
-    //   : AdMobInterstitial.setAdUnitID("ca-app-pub-3271224099084995/3812845286");
     Platform.OS === "ios"
-      ? AdMobInterstitial.setAdUnitID("ca-app-pub-3940256099942544/4411468910") //testID
-      : AdMobInterstitial.setAdUnitID("ca-app-pub-3940256099942544/1033173712"); //testID
+      ? AdMobInterstitial.setAdUnitID("ca-app-pub-3271224099084995/3801252904")
+      : AdMobInterstitial.setAdUnitID("ca-app-pub-3271224099084995/3812845286");
+    // Platform.OS === "ios"
+    //   ? AdMobInterstitial.setAdUnitID("ca-app-pub-3940256099942544/4411468910") //testID
+    //   : AdMobInterstitial.setAdUnitID("ca-app-pub-3940256099942544/1033173712"); //testID
 
     AdMobInterstitial.addEventListener("interstitialDidLoad", () =>
       console.log("interstitialDidLoad")

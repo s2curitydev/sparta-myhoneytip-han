@@ -2,7 +2,7 @@
   "expo": {
     "name": "my portfolio",
     "slug": "sparta-myhoneytip-han",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -20,7 +20,7 @@
     },
     "ios": {
       "supportsTablet": true,
-      "buildNumber": "1.0.3",
+      "buildNumber": "1.0.4",
       "bundleIdentifier": "hhan.myportfolio",
       "config": {
         "googleMobileAdsAppId": "ca-app-pub-1523024783956163~7189892325"
@@ -28,7 +28,7 @@
     },
     "android": {
       "package": "hhan.myportfolio",
-      "versionCode": 4,
+      "versionCode": 5,
       "permissions": ["ACCESS_FINE_LOCATION", "ACCESS_CORSE_LOCATION"],
       "config": {
         "googleMobileAdsAppId": "ca-app-pub-1523024783956163~8990059153"
