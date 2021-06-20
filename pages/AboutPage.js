@@ -32,14 +32,16 @@ export default function AboutPage() {
           <AdMobBanner
             bannerSize="fullBanner"
             servePersonalizedAds={true}
-            adUnitID="ca-app-pub-1523024783956163/3658729477"
+            adUnitID="ca-app-pub-3940256099942544/2934735716" // test ID
+            // adUnitID="ca-app-pub-1523024783956163/3658729477"
             style={styles.banner}
           />
         ) : (
           <AdMobBanner
             bannerSize="fullBanner"
             servePersonalizedAds={true}
-            adUnitID="ca-app-pub-1523024783956163/6814487803"
+            adUnitID="ca-app-pub-3940256099942544/6300978111" // test ID
+            // adUnitID="ca-app-pub-1523024783956163/6814487803"
             style={styles.banner}
           />
         )}

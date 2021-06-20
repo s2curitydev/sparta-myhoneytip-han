@@ -28,19 +28,16 @@ export default function LikePage({ navigation, route }) {
       title: "Favorite",
     });
     const user_id = Constants.installationId;
-    firebase_db
-      .ref("/like/" + user_id)
-      .once("value")
-      .then((snapshot) => {
-        console.log("파이어베이스에서 데이터 가져왔습니다!!");
-        let tip = snapshot.val();
-        console.log(tip);
-        let tip_list = Object.values(tip);
-        if (tip_list.length > 0) {
-          setTip(tip_list);
-          setReady(false);
-        }
-      });
+    firebase_db.ref("/like/" + user_id).on("value", (snapshot) => {
+      console.log("파이어베이스에서 데이터 가져왔습니다!!");
+      let tip = snapshot.val();
+      console.log(tip);
+      let tip_list = Object.values(tip);
+      if (tip_list.length > 0) {
+        setTip(tip_list);
+        setReady(false);
+      }
+    });
   }, []);
 
   return ready ? (
@@ -51,14 +48,16 @@ export default function LikePage({ navigation, route }) {
         <AdMobBanner
           bannerSize="fullBanner"
           servePersonalizedAds={true}
-          adUnitID="ca-app-pub-1523024783956163/3658729477"
+          adUnitID="ca-app-pub-3940256099942544/2934735716" // test ID
+          // adUnitID="ca-app-pub-1523024783956163/3658729477"
           style={styles.banner}
         />
       ) : (
         <AdMobBanner
           bannerSize="fullBanner"
           servePersonalizedAds={true}
-          adUnitID="ca-app-pub-1523024783956163/6814487803"
+          adUnitID="ca-app-pub-3940256099942544/6300978111" // test ID
+          // adUnitID="ca-app-pub-1523024783956163/6814487803"
           style={styles.banner}
         />
       )}
@@ -73,14 +72,16 @@ export default function LikePage({ navigation, route }) {
         <AdMobBanner
           bannerSize="fullBanner"
           servePersonalizedAds={true}
-          adUnitID="ca-app-pub-1523024783956163/3658729477"
+          adUnitID="ca-app-pub-3940256099942544/2934735716" // test ID
+          // adUnitID="ca-app-pub-1523024783956163/3658729477"
           style={styles.banner}
         />
       ) : (
         <AdMobBanner
           bannerSize="fullBanner"
           servePersonalizedAds={true}
-          adUnitID="ca-app-pub-1523024783956163/6814487803"
+          adUnitID="ca-app-pub-3940256099942544/6300978111" // test ID
+          // adUnitID="ca-app-pub-1523024783956163/6814487803"
           style={styles.banner}
         />
       )}
