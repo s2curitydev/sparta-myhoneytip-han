@@ -32,10 +32,12 @@ export default function LikePage({ navigation, route }) {
       console.log("파이어베이스에서 데이터 가져왔습니다!!");
       let tip = snapshot.val();
       console.log(tip);
-      let tip_list = Object.values(tip);
-      if (tip_list.length > 0) {
+      setReady(false);
+      if (tip != null) {
+        let tip_list = Object.values(tip);
         setTip(tip_list);
-        setReady(false);
+      } else {
+        setTip([]);
       }
     });
   }, []);

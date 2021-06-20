@@ -186,30 +186,6 @@ export default function MainPage({ navigation, route }) {
         </TouchableOpacity>
 
         <TouchableOpacity
-          style={styles.middleButton01}
-          onPress={() => {
-            category("Life");
-          }}
-        >
-          <Text style={styles.middleButtonText}>Life</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.middleButton02}
-          onPress={() => {
-            category("Invest");
-          }}
-        >
-          <Text style={styles.middleButtonText}>Invest</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
-          style={styles.middleButton03}
-          onPress={() => {
-            category("Animal");
-          }}
-        >
-          <Text style={styles.middleButtonText}>Animal</Text>
-        </TouchableOpacity>
-        <TouchableOpacity
           style={styles.middleButton04}
           onPress={() => {
             navigation.navigate("LikePage");
