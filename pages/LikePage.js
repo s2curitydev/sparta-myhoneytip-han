@@ -28,16 +28,21 @@ export default function LikePage({ navigation, route }) {
       title: "Favorite",
     });
     const user_id = Constants.installationId;
+    // firebase_db.ref("/like/").on("value", (snapshot) => {
     firebase_db.ref("/like/" + user_id).on("value", (snapshot) => {
       console.log("파이어베이스에서 데이터 가져왔습니다!!");
       let tip = snapshot.val();
       console.log(tip);
       setReady(false);
+      console.log("ready?");
+
       if (tip != null) {
         let tip_list = Object.values(tip);
         setTip(tip_list);
+        console.log("liked");
       } else {
-        setTip([]);
+        setTip({});
+        console.log("else filed");
       }
     });
   }, []);
@@ -65,8 +70,8 @@ export default function LikePage({ navigation, route }) {
       )}
       {tip.map((content, i) => {
         return (
-          <View>
-            <LikeCard key={i} content={content} navigation={navigation} />
+          <View key={i}>
+            <LikeCard content={content} navigation={navigation} />
           </View>
         );
       })}

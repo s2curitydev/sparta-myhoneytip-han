@@ -17,6 +17,7 @@ export default function LikeCard({ content, navigation, reload }) {
   };
 
   const remove = () => {
+    console.log("removed");
     const user_id = Constants.installationId;
     firebase_db
       .ref("/like/" + user_id + "/" + content.idx)
@@ -24,7 +25,7 @@ export default function LikeCard({ content, navigation, reload }) {
       .then(function () {
         Alert.alert("Deleted");
         navigation.navigate("LikePage");
-        reload();
+        //   reload();
       });
   };
 

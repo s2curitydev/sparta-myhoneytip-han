@@ -90,8 +90,9 @@ export default function MainPage({ navigation, route }) {
 
       const temp = result.data.main.temp;
       const condition = result.data.weather[0].main;
+      const adsID = "";
 
-      // console.log(temp);
+      console.log(temp);
       // console.log(condition);
 
       //오랜만에 복습해보는 객체 리터럴 방식으로 딕셔너리 구성하기!!
